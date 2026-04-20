@@ -1,0 +1,6 @@
+@DeutschArtikelLearnApp_HostAddress = http://localhost:5085
+
+GET {{DeutschArtikelLearnApp_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
