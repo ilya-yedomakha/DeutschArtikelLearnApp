@@ -1,4 +1,4 @@
-﻿using DeutschArtikelLearnApp.Models;
+﻿using DeutschArtikelLearnApp.Model.Base;
 
 namespace DeutschArtikelLearnApp.Help.Result.ModelErrors
 {

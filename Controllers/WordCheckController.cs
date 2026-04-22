@@ -3,23 +3,22 @@ using System.Text.RegularExpressions;
 using DeutschArtikelLearnApp.DTO;
 using DeutschArtikelLearnApp.Help.Result;
 using DeutschArtikelLearnApp.Help.Result.ModelErrors;
-using DeutschArtikelLearnApp.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DeutschArtikelLearnApp.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WordCheckController : ControllerBase
+    public partial class WordCheckController : ControllerBase
     {
-        [HttpGet(Name = "GetTestWord")]
+        [HttpGet("GetTestWord")]
         public async Task<object> GetTestWord()
         {
             return await SingleWordDataRequest("Land");
         }
 
 
-        [HttpPost(Name = "SingleWordCheck")]
+        [HttpPost("SingleWordCheck")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         public async Task<IActionResult> SingleWordCheck([FromBody] SingleWordRequest singleWordRequest)
@@ -105,13 +104,6 @@ namespace DeutschArtikelLearnApp.Controllers
         public class SingleWordRequest
         {
             public string Word { get; set; } = "";
-        }
-
-        public class RightForm : BaseModel
-        {
-            public string? Word { get; set; }
-            public string? Article { get; set; }
-            public string? Plural { get; set; }
         }
         #endregion util methods
     }
