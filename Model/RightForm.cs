@@ -6,7 +6,6 @@ namespace DeutschArtikelLearnApp.Model
         {
             public required string Article { get; set; }
             public required string Plural { get; set; }
-
-            public List<Lesson> Lessons { get; } = [];
+            public HashSet<Lesson> Lessons { get; } = [];
     }
 }

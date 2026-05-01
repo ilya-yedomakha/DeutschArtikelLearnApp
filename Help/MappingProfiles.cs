@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using DeutschArtikelLearnApp.DTO;
+using DeutschArtikelLearnApp.DTO.Create;
+using DeutschArtikelLearnApp.Model;
 
 namespace DeutschArtikelLearnApp.Help
 {
@@ -6,6 +9,7 @@ namespace DeutschArtikelLearnApp.Help
     {
         public MappingProfiles()
         {
+            CreateMap<RightForm, RightFormReadDTO>();
         }
     }
 }

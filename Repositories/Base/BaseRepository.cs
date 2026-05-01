@@ -56,7 +56,7 @@ namespace DeutschArtikelLearnApp.Repositories.Base
             return query;
         }
 
-        public TModel? GetById(long id, bool useIncludes)
+        public TModel? GetById(int id, bool useIncludes)
         {
             if (useIncludes)
             {
@@ -72,7 +72,7 @@ namespace DeutschArtikelLearnApp.Repositories.Base
 
         
 
-        public bool ModelExists(long id)
+        public bool ModelExists(int id)
         {
             return _context.Set<TModel>().Any(e => e.Id == id);
         }

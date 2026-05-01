@@ -5,6 +5,6 @@ namespace DeutschArtikelLearnApp.Model
 {
     public class Lesson : NamedEntity
     {
-        public List<RightForm> RightForms { get; } = [];
+        public HashSet<RightForm> RightForms { get; } = [];
     }
 }
