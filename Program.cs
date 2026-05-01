@@ -21,6 +21,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped(typeof(BaseRepository<>));
 builder.Services.AddScoped<RightFormService>();
+builder.Services.AddScoped<LessonService>();
 builder.Services.AddScoped<RightFormRepository>();
 builder.Services.AddScoped<LessonRepository>();
 //builder.Services.AddScoped(typeof(BaseService<,>)); // ??

@@ -1,4 +1,5 @@
 using DeutschArtikelLearnApp.Model.Base;
+using DeutschArtikelLearnApp.Model.Lessons;
 
 namespace DeutschArtikelLearnApp.Model
 {
@@ -6,6 +7,6 @@ namespace DeutschArtikelLearnApp.Model
         {
             public required string Article { get; set; }
             public required string Plural { get; set; }
-            public HashSet<Lesson> Lessons { get; } = [];
+            public HashSet<Lesson> Lessons { get; set; } = [];
     }
 }

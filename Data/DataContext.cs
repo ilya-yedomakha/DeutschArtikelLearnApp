@@ -1,4 +1,5 @@
 ﻿using DeutschArtikelLearnApp.Model;
+using DeutschArtikelLearnApp.Model.Lessons;
 using Microsoft.EntityFrameworkCore;
 
 namespace DeutschArtikelLearnApp.Data

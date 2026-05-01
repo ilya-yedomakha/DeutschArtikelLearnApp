@@ -50,8 +50,7 @@ Thumbs.db
 # =========================
 # EF Core
 # =========================
-Migrations/*Designer.cs
-Migrations/*Snapshot.cs
+
 
 # =========================
 # Test results

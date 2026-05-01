@@ -7,6 +7,7 @@ using DeutschArtikelLearnApp.DTO.WiktApiResponseDTOS;
 using DeutschArtikelLearnApp.Help.Result;
 using DeutschArtikelLearnApp.Help.Result.ModelErrors;
 using DeutschArtikelLearnApp.Model;
+using DeutschArtikelLearnApp.Model.Lessons;
 using DeutschArtikelLearnApp.Repositories;
 using DeutschArtikelLearnApp.Repositories.Base;
 using DeutschArtikelLearnApp.Services.Base;
@@ -38,8 +39,12 @@ namespace DeutschArtikelLearnApp.Services
             if (lessonId != null)
             {
                 db_lesson = _lessonRepository.GetById((int)lessonId, true);
+                if (db_lesson == null)
+                {
+                    return Result<RightForm, RightFormReadDTO>.Failure(ModelError<Lesson>.NullReference);
+                }
             }
-            
+
             if (createRightForm != null)
             {
                 if (db_lesson != null)
@@ -55,8 +60,7 @@ namespace DeutschArtikelLearnApp.Services
                         db_lesson.RightForms.Add(createRightForm);
                         createRightForm.Lessons.Add(db_lesson);
                     }
-
-                } else return Result<RightForm, RightFormReadDTO>.Success();
+                }
 
             }
             //word does not exist yet

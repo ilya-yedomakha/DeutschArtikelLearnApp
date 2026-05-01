@@ -1,5 +1,5 @@
 ﻿using DeutschArtikelLearnApp.Data;
-using DeutschArtikelLearnApp.Model;
+using DeutschArtikelLearnApp.Model.Lessons;
 using DeutschArtikelLearnApp.Repositories.Base;
 
 namespace DeutschArtikelLearnApp.Repositories

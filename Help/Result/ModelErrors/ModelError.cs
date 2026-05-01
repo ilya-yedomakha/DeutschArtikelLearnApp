@@ -7,7 +7,7 @@ namespace DeutschArtikelLearnApp.Help.Result.ModelErrors
         public static Error SameTitle(String title) => new Error(
             $"{typeof(T).Name}.SameName", $"{typeof(T).Name} with title: " + title + " already exists");
 
-        public static Error NotFound(long id) => new Error(
+        public static Error NotFound(int id) => new Error(
             $"{typeof(T).Name}.NotFound", $"{typeof(T).Name} with the id: " + id + " was not found");
 
         public static readonly Error NullReference = new Error(

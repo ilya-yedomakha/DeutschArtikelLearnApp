@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DeutschArtikelLearnApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public partial class WordController : ControllerBase
     {
         private readonly RightFormService _rightFormService;
