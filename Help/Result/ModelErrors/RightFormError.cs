@@ -6,5 +6,10 @@ namespace DeutschArtikelLearnApp.Help.Result.ModelErrors
     {
         public static Error IncorrectWord(String word) => new Error(
             $"{typeof(T).Name}.IncorrectWord", $"The word: " + word + " is incorrect.");
+
+        internal static Error ServiceError(String httpContent)
+        {
+            return new Error($"{typeof(T).Name}.IncorrectWord",httpContent);
+        }
     }
 }

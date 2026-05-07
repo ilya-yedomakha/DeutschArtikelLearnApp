@@ -161,13 +161,18 @@ namespace DeutschArtikelLearnApp.Services
         {
             var client = new HttpClient();
 
-            var url = $"https://api.wiktapi.dev/v1/de/word/{word}/forms?lang=de";
+            var encodedWord = Uri.EscapeDataString(word);
+
+            var url = $"https://api.wiktapi.dev/v1/de/word/{encodedWord}/forms?lang=de";
+
             var response = await client.GetAsync(url);
 
             if (!response.IsSuccessStatusCode)
             {
+                var errorMessage = await response.Content.ReadAsStringAsync();
+
                 return Result<RightForm, RightFormReadDTO>
-                    .Failure(RightFormError<RightForm>.IncorrectWord(word));
+                    .Failure(RightFormError<RightForm>.ServiceError(errorMessage));
             }
 
             var stream = await response.Content.ReadAsStreamAsync();
